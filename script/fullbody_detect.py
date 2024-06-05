@@ -1,6 +1,6 @@
-#https://chantastu.hatenablog.com/entry/2022/09/11/002035#5-%E5%85%A8%E8%BA%AB%E8%AA%8D%E8%AD%98
-
 #!/usr/bin/env python3
+
+#https://chantastu.hatenablog.com/entry/2022/09/11/002035#google_vignette
 
 import rospy
 import cv2
@@ -24,7 +24,7 @@ def image_callback(msg):
         #ROSのイメージメッセージをbgrのMat型に変換
         cv_img = bridge.imgmsg_to_cv2(msg, "bgr8")
         fullbodyrect = cascade.detectMultiScale(cv_img)
-        print('FullBody Coordinate1:', fullbodyrect[0])
+        #print('FullBody Coordinate1:', fullbodyrect[0])
 
         if len(fullbodyrect) > 0:
             for [x,y,w,d] in fullbodyrect:
